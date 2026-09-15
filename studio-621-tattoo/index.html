@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio 621 Tattoo - Clean, Creative, Professional</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#F97316;--primary-dark:#EA580C;--accent:#06B6D4;--dark:#111827;--card:#1F2937;--gray:#9CA3AF;--text:#E5E7EB}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--dark);line-height:1.6}
+nav{background:var(--dark);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.05)}
+nav .logo{font-size:1.3rem;font-weight:800;color:#fff}
+nav .logo span{color:var(--primary)}
+nav ul{list-style:none;display:flex;gap:1.5rem}
+nav a{color:var(--gray);text-decoration:none;font-size:0.9rem;transition:color 0.3s}
+nav a:hover{color:var(--primary)}
+.hero{min-height:85vh;display:flex;align-items:center;padding:4rem 2rem;background:linear-gradient(135deg,#1F2937 0%,#111827 50%,#1E1B4B 100%);position:relative}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center}
+.hero-text .badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(249,115,22,0.1);color:var(--primary);padding:0.4rem 1rem;border-radius:50px;font-size:0.85rem;font-weight:600;margin-bottom:1.5rem;border:1px solid rgba(249,115,22,0.2)}
+.hero-text h1{font-size:3.2rem;font-weight:900;color:#fff;line-height:1.05;margin-bottom:1rem}
+.hero-text h1 span{color:var(--primary)}
+.hero-text p{color:var(--gray);font-size:1.1rem;max-width:480px;margin-bottom:2rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:0.85rem 2rem;border-radius:6px;text-decoration:none;font-weight:700;transition:all 0.3s;font-size:0.9rem}
+.btn-orange{background:var(--primary);color:#fff}
+.btn-orange:hover{background:var(--primary-dark);transform:translateY(-2px)}
+.btn-cyan{background:var(--accent);color:var(--dark)}
+.btn-cyan:hover{background:#0891B2}
+.hero-card{background:var(--card);border:1px solid rgba(255,255,255,0.05);border-radius:16px;padding:2.5rem;text-align:center}
+.hero-card .stars{color:var(--primary);font-size:1.3rem;margin-bottom:0.5rem}
+.hero-card .score{font-size:4rem;font-weight:900;color:#fff;line-height:1}
+.hero-card .of{color:var(--gray);font-size:0.9rem}
+.hero-card .reviews-count{color:var(--accent);font-weight:600;margin-top:0.5rem}
+section{padding:4.5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-title{text-align:center;margin-bottom:2.5rem}
+.section-title h2{font-size:2rem;color:#fff}
+.section-title p{color:var(--gray);margin-top:0.5rem}
+.services{background:var(--card)}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.s-card{background:var(--dark);border:1px solid rgba(255,255,255,0.05);border-radius:12px;padding:2rem;transition:all 0.3s}
+.s-card:hover{border-color:var(--primary);transform:translateY(-3px)}
+.s-card .s-icon{font-size:2rem;margin-bottom:1rem}
+.s-card h3{color:#fff;font-size:1.05rem;margin-bottom:0.4rem}
+.s-card p{color:var(--gray);font-size:0.9rem}
+.experience{background:var(--dark)}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.exp-card{background:var(--card);border-radius:12px;padding:2rem;text-align:center;border:1px solid rgba(255,255,255,0.05)}
+.exp-card .e-icon{font-size:2.5rem;margin-bottom:1rem}
+.exp-card h3{color:#fff;margin-bottom:0.4rem}
+.exp-card p{color:var(--gray);font-size:0.9rem}
+.reviews{background:var(--card)}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.r-card{background:var(--dark);border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:1.5rem}
+.r-card .stars{color:var(--primary);margin-bottom:0.5rem}
+.r-card p{color:var(--text);font-style:italic;font-size:0.95rem}
+.r-card .who{color:var(--gray);font-size:0.8rem;margin-top:0.5rem}
+.contact{background:var(--dark)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.info h4{color:var(--primary);margin-bottom:0.3rem;margin-top:1.2rem;font-size:0.9rem}
+.info h4:first-child{margin-top:0}
+.info p{color:var(--gray)}
+form{display:flex;flex-direction:column;gap:0.85rem}
+form input,form textarea{padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.08);border-radius:8px;font-size:1rem;font-family:inherit;background:var(--card);color:#fff;transition:border-color 0.3s}
+form input:focus,form textarea:focus{outline:none;border-color:var(--primary)}
+form input::placeholder,form textarea::placeholder{color:var(--gray)}
+form textarea{min-height:100px;resize:vertical}
+form button{padding:0.85rem;background:var(--primary);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:1rem;transition:background 0.3s}
+form button:hover{background:var(--primary-dark)}
+footer{background:var(--card);color:var(--gray);text-align:center;padding:1.5rem;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.05)}
+@media(max-width:768px){.hero-inner{grid-template-columns:1fr;text-align:center}.hero-text h1{font-size:2.2rem}.hero-btns{justify-content:center}.exp-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}nav ul{display:none}}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">STUDIO <span>621</span></div>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Book</a></li>
+</ul>
+</nav>
+<section class="hero">
+<div class="hero-inner">
+<div class="hero-text">
+<div class="badge">&#11088; 4.9 Stars &bull; 128 Reviews</div>
+<h1>Studio <span>621</span> Tattoo</h1>
+<p>Where cleanliness meets creativity. Top-rated tattoo studio delivering exceptional art in a welcoming, professional environment.</p>
+<div class="hero-btns">
+<a href="#contact" class="btn btn-orange">Book a Session</a>
+<a href="tel:+15013045037" class="btn btn-cyan">(501) 304-5037</a>
+</div>
+</div>
+<div class="hero-card">
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="score">4.9</div>
+<div class="of">out of 5</div>
+<div class="reviews-count">128 Google Reviews</div>
+</div>
+</div>
+</section>
+<section id="services" class="services">
+<div class="container">
+<div class="section-title"><h2>Our Services</h2><p>Everything you need for your next piece</p></div>
+<div class="s-grid">
+<div class="s-card"><div class="s-icon">&#127912;</div><h3>Custom Tattoos</h3><p>Original artwork designed specifically for you. From concept to skin, we make it yours.</p></div>
+<div class="s-card"><div class="s-icon">&#128396;&#65039;</div><h3>Traditional &amp; Neo-Traditional</h3><p>Bold lines and rich colors in both classic and modern interpretations.</p></div>
+<div class="s-card"><div class="s-icon">&#128128;</div><h3>Blackwork</h3><p>Striking black ink designs from geometric to ornamental and everything between.</p></div>
+<div class="s-card"><div class="s-icon">&#128142;</div><h3>Piercings</h3><p>Professional piercing services with premium jewelry options for all placements.</p></div>
+<div class="s-card"><div class="s-icon">&#128171;</div><h3>Cover-Ups &amp; Touch-Ups</h3><p>Breathe new life into old tattoos or refresh faded ink to look its best.</p></div>
+<div class="s-card"><div class="s-icon">&#128172;</div><h3>Free Consultations</h3><p>Discuss your ideas, get sizing and pricing, and plan your session with no pressure.</p></div>
+</div>
+</div>
+</section>
+<section id="experience" class="experience">
+<div class="container">
+<div class="section-title"><h2>The Studio 621 Experience</h2><p>10/10 for cleanliness, service, and atmosphere</p></div>
+<div class="exp-grid">
+<div class="exp-card"><div class="e-icon">&#10024;</div><h3>Spotlessly Clean</h3><p>Hospital-grade sterilization, single-use equipment, and a pristine workspace for every client.</p></div>
+<div class="exp-card"><div class="e-icon">&#129309;</div><h3>Welcoming Atmosphere</h3><p>Relax in a comfortable, friendly environment. We make first-timers feel right at home.</p></div>
+<div class="exp-card"><div class="e-icon">&#127919;</div><h3>Exceptional Service</h3><p>From consultation to aftercare, we're with you every step of the way.</p></div>
+</div>
+</div>
+</section>
+<section id="reviews" class="reviews">
+<div class="container">
+<div class="section-title"><h2>What People Say</h2></div>
+<div class="r-grid">
+<div class="r-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"10/10 shop for cleanliness, service and atmosphere! The artist was incredibly talented and made the whole experience amazing."</p><div class="who">&mdash; Google Review</div></div>
+<div class="r-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Best tattoo studio I've been to. The attention to detail is unreal and the shop is immaculate."</p><div class="who">&mdash; Google Review</div></div>
+<div class="r-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Friendly, professional, and incredibly talented. They listened to exactly what I wanted and delivered perfection."</p><div class="who">&mdash; Google Review</div></div>
+</div>
+</div>
+</section>
+<section id="contact" class="contact">
+<div class="container">
+<div class="section-title"><h2>Book Your Appointment</h2><p>Walk-ins welcome or schedule in advance</p></div>
+<div class="contact-grid">
+<div class="info">
+<h4>&#128222; Phone</h4><p>(501) 304-5037</p>
+<h4>&#128205; Address</h4><p>160 Adam Brown Rd<br>Arkansas</p>
+<h4>&#128337; Hours</h4><p>Tue&ndash;Sat: 9AM&ndash;7PM<br>Sun&ndash;Mon: Closed</p>
+<h4>&#128203; What to Bring</h4><p>Valid government-issued photo ID required. Must be 18+.</p>
+</div>
+<form onsubmit="event.preventDefault();alert('Thanks! We will contact you to schedule your appointment.')">
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<input type="text" placeholder="What style of tattoo?">
+<textarea placeholder="Describe your idea &mdash; subject, size, placement, reference images..."></textarea>
+<button type="submit">Request Appointment</button>
+</form>
+</div>
+</div>
+</section>
+<footer>
+<p>&copy; 2026 Studio 621 Tattoo. All rights reserved. | (501) 304-5037</p>
+</footer>
+</body>
+</html>
