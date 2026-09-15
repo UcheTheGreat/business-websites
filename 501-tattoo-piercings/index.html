@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>501 Tattoo & Piercings - Clean, Professional, Creative</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#BE185D;--primary-dark:#9D174D;--accent:#FCD34D;--dark:#0C0A09;--light:#FFF1F2;--gray:#A8A29E}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:#E7E5E4;line-height:1.6;background:var(--dark)}
+nav{background:rgba(12,10,9,0.95);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.05)}
+nav .logo{color:var(--accent);font-size:1.3rem;font-weight:800;letter-spacing:1px}
+nav ul{list-style:none;display:flex;gap:1.5rem}
+nav a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.9rem;transition:color 0.3s;text-transform:uppercase;letter-spacing:1px}
+nav a:hover{color:var(--accent)}
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;background:radial-gradient(ellipse at center,#1C1917 0%,#0C0A09 70%);position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(190,24,93,0.15),transparent 50%),radial-gradient(circle at 70% 50%,rgba(252,211,77,0.08),transparent 50%)}
+.hero>*{position:relative;z-index:1}
+.hero .pre{color:var(--accent);font-size:0.9rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:1rem}
+.hero h1{font-size:3.5rem;font-weight:900;color:#fff;margin-bottom:0.5rem;letter-spacing:-1px}
+.hero h1 span{color:var(--primary)}
+.hero p{color:var(--gray);font-size:1.15rem;max-width:500px;margin:0 auto 2rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:0.9rem 2rem;border-radius:4px;text-decoration:none;font-weight:700;transition:all 0.3s;text-transform:uppercase;letter-spacing:1px;font-size:0.85rem}
+.btn-pink{background:var(--primary);color:#fff;border:2px solid var(--primary)}
+.btn-pink:hover{background:transparent;color:var(--primary)}
+.btn-gold{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+.btn-gold:hover{background:var(--accent);color:var(--dark)}
+section{padding:4.5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-title{text-align:center;margin-bottom:2.5rem}
+.section-title h2{font-size:2rem;color:#fff;text-transform:uppercase;letter-spacing:2px}
+.section-title p{color:var(--gray);margin-top:0.5rem}
+.services{background:#1C1917}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.s-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:2rem;transition:all 0.3s}
+.s-card:hover{border-color:var(--primary);background:rgba(190,24,93,0.05)}
+.s-card .s-icon{font-size:2rem;margin-bottom:1rem}
+.s-card h3{color:#fff;font-size:1.1rem;margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:1px}
+.s-card p{color:var(--gray);font-size:0.9rem}
+.gallery-section{background:var(--dark)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.75rem}
+.g-item{aspect-ratio:1;background:linear-gradient(135deg,#292524,#1C1917);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:3rem;border:1px solid rgba(255,255,255,0.05);transition:all 0.3s}
+.g-item:hover{border-color:var(--primary);transform:scale(1.02)}
+.about-section{background:#1C1917}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about-text p{color:var(--gray);margin-bottom:1rem;font-size:1rem}
+.about-text p:first-child{color:#E7E5E4;font-size:1.1rem}
+.highlights{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.hl{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.25rem;text-align:center}
+.hl .hl-num{font-size:1.8rem;font-weight:800;color:var(--accent)}
+.hl .hl-label{color:var(--gray);font-size:0.8rem;text-transform:uppercase;letter-spacing:1px}
+.reviews{background:var(--dark)}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.r-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.5rem}
+.r-card .stars{color:var(--accent);margin-bottom:0.5rem}
+.r-card p{color:rgba(255,255,255,0.7);font-style:italic;font-size:0.95rem}
+.r-card .who{color:var(--gray);font-size:0.8rem;margin-top:0.5rem}
+.contact{background:#1C1917}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.info h4{color:var(--accent);margin-bottom:0.3rem;margin-top:1.2rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:1px}
+.info h4:first-child{margin-top:0}
+.info p{color:var(--gray)}
+form{display:flex;flex-direction:column;gap:0.85rem}
+form input,form textarea{padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:1rem;font-family:inherit;background:rgba(255,255,255,0.03);color:#fff;transition:border-color 0.3s}
+form input:focus,form textarea:focus{outline:none;border-color:var(--primary)}
+form input::placeholder,form textarea::placeholder{color:var(--gray)}
+form textarea{min-height:100px;resize:vertical}
+form button{padding:0.85rem;background:var(--primary);color:#fff;border:none;border-radius:6px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:1px;font-size:0.85rem;transition:background 0.3s}
+form button:hover{background:var(--primary-dark)}
+footer{background:var(--dark);color:var(--gray);text-align:center;padding:1.5rem;font-size:0.85rem;border-top:1px solid rgba(255,255,255,0.05)}
+@media(max-width:768px){.hero h1{font-size:2.2rem}.about-grid,.contact-grid{grid-template-columns:1fr}nav ul{display:none}}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">501 TATTOO</div>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<section class="hero">
+<div class="pre">Welcome to</div>
+<h1>501 Tattoo <span>&amp;</span> Piercings</h1>
+<p>Where art meets skin. Custom designs, clean studio, experienced artists.</p>
+<div class="hero-btns">
+<a href="#contact" class="btn btn-pink">Book a Consultation</a>
+<a href="tel:+15019437133" class="btn btn-gold">Call (501) 943-7133</a>
+</div>
+</section>
+<section id="services" class="services">
+<div class="container">
+<div class="section-title"><h2>Our Services</h2><p>From custom pieces to simple piercings</p></div>
+<div class="s-grid">
+<div class="s-card"><div class="s-icon">&#127912;</div><h3>Custom Tattoos</h3><p>Original designs created just for you. Bring your ideas and we'll bring them to life.</p></div>
+<div class="s-card"><div class="s-icon">&#9999;&#65039;</div><h3>Flash Tattoos</h3><p>Pre-designed artwork available for walk-ins. New flash added regularly.</p></div>
+<div class="s-card"><div class="s-icon">&#128171;</div><h3>Cover-Ups</h3><p>Transform old or unwanted tattoos into something you'll love showing off.</p></div>
+<div class="s-card"><div class="s-icon">&#128142;</div><h3>Piercings</h3><p>Ear, nose, lip, eyebrow, and body piercings performed with sterile equipment.</p></div>
+<div class="s-card"><div class="s-icon">&#127775;</div><h3>Touch-Ups</h3><p>Color refresh, line work touch-ups, and minor modifications to existing pieces.</p></div>
+<div class="s-card"><div class="s-icon">&#128373;&#65039;</div><h3>Consultations</h3><p>Free consultations to discuss your vision, placement, sizing, and pricing.</p></div>
+</div>
+</div>
+</section>
+<section id="gallery" class="gallery-section">
+<div class="container">
+<div class="section-title"><h2>Our Work</h2><p>A sample of styles our artists specialize in</p></div>
+<div class="gallery-grid">
+<div class="g-item">&#127800;</div>
+<div class="g-item">&#128081;</div>
+<div class="g-item">&#127752;</div>
+<div class="g-item">&#128128;</div>
+<div class="g-item">&#129680;</div>
+<div class="g-item">&#127774;</div>
+<div class="g-item">&#128034;</div>
+<div class="g-item">&#9889;</div>
+</div>
+</div>
+</section>
+<section id="about" class="about-section">
+<div class="container">
+<div class="section-title"><h2>About the Shop</h2></div>
+<div class="about-grid">
+<div class="about-text">
+<p>501 Tattoo &amp; Piercings is more than a tattoo shop &mdash; it's a creative space where you can feel comfortable expressing yourself.</p>
+<p>Our studio is spotlessly clean, our artists are experienced and passionate, and every client is treated like family. We use only premium inks and single-use needles for your safety.</p>
+<p>Whether it's your first tattoo or your fiftieth, we'll make sure the experience is as incredible as the art we create.</p>
+</div>
+<div class="highlights">
+<div class="hl"><div class="hl-num">4.8</div><div class="hl-label">Google Rating</div></div>
+<div class="hl"><div class="hl-num">169+</div><div class="hl-label">Reviews</div></div>
+<div class="hl"><div class="hl-num">100%</div><div class="hl-label">Sterile</div></div>
+<div class="hl"><div class="hl-num">All</div><div class="hl-label">Skill Levels</div></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reviews" class="reviews">
+<div class="container">
+<div class="section-title"><h2>Client Reviews</h2></div>
+<div class="r-grid">
+<div class="r-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"It was so nice walking into a tattoo shop that was clean! The artist was talented and made me feel comfortable the whole time."</p><div class="who">&mdash; Google Review</div></div>
+<div class="r-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Best tattoo experience I've ever had. They listened to what I wanted and the result was even better than I imagined."</p><div class="who">&mdash; Google Review</div></div>
+<div class="r-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Amazing work, fair prices, and the friendliest crew. I won't go anywhere else for my tattoos."</p><div class="who">&mdash; Google Review</div></div>
+</div>
+</div>
+</section>
+<section id="contact" class="contact">
+<div class="container">
+<div class="section-title"><h2>Book Now</h2><p>Walk-ins welcome or schedule your session</p></div>
+<div class="contact-grid">
+<div class="info">
+<h4>Phone</h4><p>(501) 943-7133</p>
+<h4>Address</h4><p>5313 AR-5, Suite 310<br>Arkansas</p>
+<h4>Hours</h4><p>Wed&ndash;Sat: 12PM&ndash;8PM<br>Sun&ndash;Tue: Closed</p>
+<h4>Walk-Ins</h4><p>Always welcome for flash and small pieces. Call ahead for custom work.</p>
+</div>
+<form onsubmit="event.preventDefault();alert('Thanks! We will reach out to schedule your session.')">
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<input type="text" placeholder="Tattoo idea / description">
+<textarea placeholder="Tell us about placement, size, style preferences..."></textarea>
+<button type="submit">Request Appointment</button>
+</form>
+</div>
+</div>
+</section>
+<footer>
+<p>&copy; 2026 501 Tattoo &amp; Piercings. All rights reserved. | (501) 943-7133</p>
+</footer>
+</body>
+</html>
